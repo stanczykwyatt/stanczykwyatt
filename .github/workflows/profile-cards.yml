@@ -1,0 +1,77 @@
+name: Update profile cards
+
+# Renders the stats and streak cards into profile/ so the README never
+# depends on a shared public instance that can be rate limited.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/profile-cards.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      STATS_OPTIONS: show_icons=true&hide_rank=true&hide=stars,contribs&show=prs_merged&custom_title=Wyatt's GitHub Stats&hide_border=true&disable_animations=true
+      STREAK_OPTIONS: hide_border=true&disable_animations=true
+    steps:
+      - uses: actions/checkout@v7
+
+      # A failed fetch keeps the last good card instead of committing an error card.
+      - name: Stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&${{ env.STATS_OPTIONS }}&theme=default
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Stats card (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&${{ env.STATS_OPTIONS }}&theme=github_dark
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Streak card
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        continue-on-error: true
+        with:
+          options: user=${{ github.repository_owner }}&${{ env.STREAK_OPTIONS }}&theme=default
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Streak card (dark)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        continue-on-error: true
+        with:
+          options: user=${{ github.repository_owner }}&${{ env.STREAK_OPTIONS }}&theme=github-dark
+          path: profile/streak-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit changed cards
+        run: |
+          if [ -z "$(git status --porcelain -- profile)" ]; then
+            echo "Cards unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile
+          git commit -m "Update profile cards"
+          git push
