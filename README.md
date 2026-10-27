@@ -24,3 +24,14 @@ My personal site, built with Next.js, React and TypeScript and deployed on Verce
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-1C1C1C?style=for-the-badge&logo=supabase&logoColor=3ECF8E)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+## GitHub stats
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile/stats-dark.svg">
+  <img src="profile/stats.svg" height="170" alt="GitHub stats: commits, pull requests and issues">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="profile/streak-dark.svg">
+  <img src="profile/streak.svg" height="170" alt="GitHub contribution streak">
+</picture>
