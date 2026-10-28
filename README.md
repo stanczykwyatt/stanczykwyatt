@@ -6,7 +6,7 @@ I build native macOS apps in Swift and web apps in TypeScript, and I like workin
 
 ## Free Mac utilities
 
-Small, private menu bar apps for macOS. Each one is free and open source, runs in the App Sandbox with no network entitlement, and has zero dependencies.
+Small, private menu bar apps for macOS. Each one is free and open source, runs in the App Sandbox with no network entitlement, and has zero dependencies. What's coming next is on the [public roadmap](https://github.com/users/stanczykwyatt/projects/1).
 
 ### [<img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> Copy 2FA](https://github.com/stanczykwyatt/copy-2fa)
 
