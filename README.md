@@ -2,9 +2,11 @@
 
 I build native macOS apps in Swift and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
 
-[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/)
+[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/)
 
-## Projects
+## Free Mac utilities
+
+Small, private menu bar apps for macOS. Each one is free and open source, runs in the App Sandbox with no network entitlement, and has zero dependencies.
 
 ### [<img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> Copy 2FA](https://github.com/stanczykwyatt/copy-2fa)
 
@@ -25,6 +27,22 @@ Copies the newest verification code from Mail or Messages, or from a built-in TO
 - **Parsers written from scratch:** a `typedstream` decoder for message bodies in `chat.db`, opened read-only through the SQLite C API, and a protobuf wire-format reader for Google Authenticator exports. They live in a pure `Copy2FACore` target that is stress-tested with thousands of damaged inputs.
 - **Secrets stay on the Mac.** OTP keys live in a non-synced Keychain item behind Touch ID, codes are computed with CryptoKit HMAC (SHA-1/256/512), and HOTP counters are saved before a code is copied.
 - **Clipboard hygiene.** `.currentHostOnly` keeps codes off Universal Clipboard, `ConcealedType` and `TransientType` keep them out of clipboard managers, and `sharingType = .none` hides the notice from screenshots and screen sharing.
+
+### [<img src="https://github.com/stanczykwyatt/show-desktop/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> Show Desktop](https://github.com/stanczykwyatt/show-desktop)
+
+[![CI](https://github.com/stanczykwyatt/show-desktop/actions/workflows/ci.yml/badge.svg)](https://github.com/stanczykwyatt/show-desktop/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/stanczykwyatt/show-desktop)](https://github.com/stanczykwyatt/show-desktop/releases)
+[![License](https://img.shields.io/github/license/stanczykwyatt/show-desktop)](https://github.com/stanczykwyatt/show-desktop/blob/main/LICENSE)
+
+The Windows+D shortcut for the Mac: one click or ⌃⇧D hides every window, and the next puts back exactly what was open. Swift 6 and AppKit on macOS 14+, zero dependencies.
+
+<img src="https://github.com/stanczykwyatt/show-desktop/raw/main/docs/demo.gif" width="380" alt="Show Desktop hiding three windows to reveal the Desktop, then bringing them back">
+
+- **Restores the exact state.** It records which apps were visible and orders them back to front from `CGWindowListCopyWindowInfo`, so the second click unhides only those, leaves apps you'd already hidden alone and puts the app you were using back in front. That logic is a pure `ShowDesktopCore` target with its own tests.
+- **Works around macOS's activation rules.** Hiding the frontmost app makes macOS promote the next one, so Finder is activated first and stragglers get a second pass.
+- **Least privilege.** App Sandbox with no network or file entitlements, a single Apple Events exception for Finder (window IDs only, never user text, go into the scripts), and a Carbon hot key instead of Accessibility. CI fails the build if a network or file entitlement ever appears.
+
+## Website
 
 ### [wyattstanczyk.com](https://wyattstanczyk.com)
 
