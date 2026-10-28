@@ -16,7 +16,7 @@ I build native macOS apps in Swift and web apps in TypeScript, and I like workin
 Copies the newest verification code from Mail or Messages, or from a built-in TOTP/HOTP authenticator, with one keyboard shortcut. Swift 6 on macOS 14+, zero dependencies, plus a C#/.NET port for Windows.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/screenshots/picker-dark.png">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/copy-2fa-picker-dark.png">
   <img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/screenshots/picker-light.png" width="380" alt="Copy 2FA's authenticator picker showing live codes">
 </picture>
 
