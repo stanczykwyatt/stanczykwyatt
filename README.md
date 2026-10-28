@@ -26,7 +26,12 @@ Copies the newest verification code from Mail or Messages, or from a built-in TO
 
 ### [wyattstanczyk.com](https://wyattstanczyk.com)
 
-My personal site, built with Next.js, React and TypeScript and deployed on Vercel.
+My personal site: Next.js 16 and React 19 with no other runtime dependencies, deployed on Vercel.
+
+- **Raw WebGL2, no 3D library.** A ray-marched SDF scene in hand-written GLSL renders into half-float HDR framebuffers, followed by a post pass with bloom, ACES tone mapping and dithering.
+- **HDR reflections** from an equirectangular environment map, decoded by a hand-written Radiance `.hdr` (RGBE with run-length encoding) loader and blurred by roughness through its mip chain.
+- **Cache Components** (`"use cache"` with `cacheLife("hours")`) for live GitHub data, and a strict Content Security Policy with security headers on every route.
+- Respects `prefers-reduced-motion` and caps the device pixel ratio at 2.
 
 ## Tech
 
