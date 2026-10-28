@@ -1,6 +1,8 @@
-# Hi, I'm Wyatt
+# Wyatt Stanczyk
 
-I build things on the web and for the Mac. Site: [wyattstanczyk.com](https://wyattstanczyk.com)
+I build native macOS apps in Swift and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
+
+[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/)
 
 ## Projects
 
@@ -54,3 +56,5 @@ My personal site: Next.js 16 and React 19 with no other runtime dependencies, de
   <source media="(prefers-color-scheme: dark)" srcset="profile/streak-dark.svg">
   <img src="profile/streak.svg" height="170" alt="GitHub contribution streak">
 </picture>
+
+<sub>Cards are rendered daily by a <a href="https://github.com/stanczykwyatt/stanczykwyatt/blob/main/.github/workflows/profile-cards.yml">GitHub Actions workflow</a> in this repo rather than a shared public instance.</sub>
