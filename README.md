@@ -1,8 +1,8 @@
 # Wyatt Stanczyk
 
-I build native macOS apps in Swift and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
+I build native macOS apps in Swift, command line tools for coding agents, and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
 
-[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/) · [Who Stole My Focus](https://stanczykwyatt.github.io/who-stole-my-focus/)
+[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/) · [Who Stole My Focus](https://stanczykwyatt.github.io/who-stole-my-focus/) · [mulligan](https://stanczykwyatt.github.io/mulligan/) · [symbolhop](https://stanczykwyatt.github.io/symbolhop/)
 
 ## Free Mac utilities
 
@@ -59,6 +59,30 @@ Names the app that jumps in front of your work, including in the middle of typin
 - **Telling steals from switches.** A pure `FocusCore` target picks the likeliest cause from input timing (a click with no typing since, the instant ⌘ comes up after ⌘Tab, a keypress in a launcher), walks a short history of recent fronts so focus returning after a password prompt or the lock screen isn't blamed, and takes a second look 0.4 s later: did you keep typing, did the Space change, did the last app quit after all.
 - **Tested off screen.** 170+ Swift Testing tests, including the system monitor fed a private `NotificationCenter` and the SwiftUI log rendered from windows that are never shown. The README screenshots come from those renders.
 
+## Tools for coding agents
+
+Free, open-source command line tools for Codex, Claude Code, Gemini CLI and other terminal agents. Both make no network calls and have zero dependencies.
+
+### [<img src="https://github.com/stanczykwyatt/mulligan/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> mulligan](https://github.com/stanczykwyatt/mulligan)
+
+[![CI](https://github.com/stanczykwyatt/mulligan/actions/workflows/ci.yml/badge.svg)](https://github.com/stanczykwyatt/mulligan/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/stanczykwyatt/mulligan)](https://github.com/stanczykwyatt/mulligan/releases)
+
+Undo for coding agents. A snapshot at every prompt and tool call, shell commands included, so you can list, diff and undo back to any point. One Swift binary for macOS and Linux that needs only git.
+
+- **Never touches your repo.** Snapshots go into a separate git repository outside the project, with every inherited `GIT_*` variable, global config and hook shut out.
+- **Restore can't lose a file.** It snapshots first, fails closed, and leaves alone anything it couldn't put back: ignored files, big files, nested repos.
+
+### [<img src="https://github.com/stanczykwyatt/symbolhop/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> symbolhop](https://github.com/stanczykwyatt/symbolhop)
+
+[![CI](https://github.com/stanczykwyatt/symbolhop/actions/workflows/ci.yml/badge.svg)](https://github.com/stanczykwyatt/symbolhop/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/stanczykwyatt/symbolhop)](https://github.com/stanczykwyatt/symbolhop/releases)
+
+Go-to-definition and find-references for coding agents: an MCP server and CLI that asks your language servers instead of grepping. Node 20+, no dependencies.
+
+- **Its own LSP client.** It picks a server per file (clangd, pyright, gopls, rust-analyzer and more), runs several at once, and takes symbols by name instead of column.
+- **Measured, not guessed.** On a made-up C project a function's uses came back as 10 exact lines against 59 to 77 from grep, and CI reruns the measurement.
+
 ## Website
 
 ### [wyattstanczyk.com](https://wyattstanczyk.com)
@@ -77,7 +101,8 @@ My personal site: Next.js 16 and React 19 with no other runtime dependencies, de
 <table>
   <tr><td><b>Languages</b></td><td>Swift · TypeScript · C# · GLSL · SQL · Bash</td></tr>
   <tr><td><b>Apple</b></td><td>SwiftUI · AppKit · Carbon · Security · LocalAuthentication · CryptoKit · App Sandbox · Swift Package Manager</td></tr>
-  <tr><td><b>Web</b></td><td>Next.js · React · Tailwind CSS · WebGL2</td></tr>
+  <tr><td><b>Web</b></td><td>Next.js · React · Tailwind CSS · WebGL2 · Node.js</td></tr>
+  <tr><td><b>Agents</b></td><td>MCP · Language Server Protocol · agent hooks</td></tr>
   <tr><td><b>Data and infra</b></td><td>Supabase (Postgres) · SQLite · Vercel · GitHub Actions · GitHub Pages</td></tr>
 </table>
 
