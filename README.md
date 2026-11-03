@@ -2,7 +2,7 @@
 
 I build native macOS apps in Swift, command line tools for coding agents, and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
 
-[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/) · [Who Stole My Focus](https://stanczykwyatt.github.io/who-stole-my-focus/) · [mulligan](https://stanczykwyatt.github.io/mulligan/) · [symbolhop](https://stanczykwyatt.github.io/symbolhop/)
+[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/) · [Who Stole My Focus](https://stanczykwyatt.github.io/who-stole-my-focus/) · [AI Footprint](https://stanczykwyatt.github.io/ai-footprint/) · [mulligan](https://stanczykwyatt.github.io/mulligan/) · [symbolhop](https://stanczykwyatt.github.io/symbolhop/)
 
 ## Free Mac utilities
 
@@ -58,6 +58,23 @@ Names the app that jumps in front of your work, including in the middle of typin
 - **No permissions at all.** Detection uses only `NSWorkspace` activation, launch, hide and Space notifications plus `CGEventSource.secondsSinceLastEventType` idle times, which macOS gives sandboxed apps without Accessibility or Input Monitoring. CI fails the build if any entitlement besides the App Sandbox, or any event tap, AX, screen-capture or networking call, appears.
 - **Telling steals from switches.** A pure `FocusCore` target picks the likeliest cause from input timing (a click with no typing since, the instant ⌘ comes up after ⌘Tab, a keypress in a launcher), walks a short history of recent fronts so focus returning after a password prompt or the lock screen isn't blamed, and takes a second look 0.4 s later: did you keep typing, did the Space change, did the last app quit after all.
 - **Tested off screen.** 170+ Swift Testing tests, including the system monitor fed a private `NotificationCenter` and the SwiftUI log rendered from windows that are never shown. The README screenshots come from those renders.
+
+### [<img src="https://github.com/stanczykwyatt/ai-footprint/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> AI Footprint](https://github.com/stanczykwyatt/ai-footprint)
+
+[![CI](https://github.com/stanczykwyatt/ai-footprint/actions/workflows/ci.yml/badge.svg)](https://github.com/stanczykwyatt/ai-footprint/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/stanczykwyatt/ai-footprint)](https://github.com/stanczykwyatt/ai-footprint/releases)
+[![License](https://img.shields.io/github/license/stanczykwyatt/ai-footprint)](https://github.com/stanczykwyatt/ai-footprint/blob/main/LICENSE)
+
+See what AI coding tools leave on your Mac: disk per tool, background processes, orphaned MCP servers and login items, with a before-and-after receipt for every update. Read-only, sandboxed, no internet access. Swift 6, AppKit and SwiftUI on macOS 14+, zero dependencies.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/stanczykwyatt/ai-footprint/raw/main/docs/screenshot-dark.png">
+  <img src="https://github.com/stanczykwyatt/ai-footprint/raw/main/docs/screenshot-light.png" width="560" alt="The AI Footprint window: total disk use of AI tools, an orphaned MCP server, then each tool with its folders, processes and login items">
+</picture>
+
+- **Read-only by construction.** The only entitlements are the App Sandbox and a read-only list of named subfolders, never a whole tool folder, so tokens, keys and settings stay out of reach. A test fails if a whole folder is ever added, and CI fails the build if any other entitlement, network call or file read outside one reviewed file appears.
+- **Processes without extra access.** It lists processes through `sysctl` (`KERN_PROC_ALL`, `KERN_PROCARGS2`), which the sandbox allows, walks parent chains to say what keeps each one alive, and keeps only names from command lines, never arguments or environment variables.
+- **Update receipts.** A pure `FootprintCore` target compares each check with the last one and turns version, folder size and login item changes into receipts, measuring folders with `lstat` so symbolic links can't lead it outside what it may read. 186 Swift Testing tests.
 
 ## Tools for coding agents
 
