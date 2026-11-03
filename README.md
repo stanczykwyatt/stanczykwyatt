@@ -6,7 +6,7 @@ I build native macOS apps in Swift, command line tools for coding agents, and we
 
 ## Free Mac utilities
 
-Small, private menu bar apps for macOS. Each one is free and open source, runs in the App Sandbox with no network entitlement, and has zero dependencies. What's coming next is on the [public roadmap](https://github.com/users/stanczykwyatt/projects/1).
+Small, private menu bar apps for macOS. Each one is free and open source with zero dependencies. All but Next Departures have no internet access, and it connects only to the transit feeds you use. What's coming next is on the [public roadmap](https://github.com/users/stanczykwyatt/projects/1).
 
 ### [<img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/icon.png" width="28" height="28" align="top" alt=""> Copy 2FA](https://github.com/stanczykwyatt/copy-2fa)
 
@@ -48,7 +48,7 @@ The Windows+D shortcut for the Mac: one click or ⌃⇧D hides every window, and
 [![Release](https://img.shields.io/github/v/release/stanczykwyatt/who-stole-my-focus)](https://github.com/stanczykwyatt/who-stole-my-focus/releases)
 [![License](https://img.shields.io/github/license/stanczykwyatt/who-stole-my-focus)](https://github.com/stanczykwyatt/who-stole-my-focus/blob/main/LICENSE)
 
-Names the app that jumps in front of your work, including in the middle of typing, from a menu bar log of every app that comes to the front. Swift 6, AppKit and SwiftUI on macOS 14+, zero dependencies.
+Names the app that jumps in front of your work, including in the middle of typing, from a menu bar log of every app that comes to the front. Swift 6, AppKit and SwiftUI on macOS 14+, zero dependencies. Also on **[Windows](https://github.com/stanczykwyatt/who-stole-my-focus-windows)** as a preview, with the same rules in C# and .NET 8.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/stanczykwyatt/who-stole-my-focus/raw/main/docs/screenshot-dark.png">
@@ -76,6 +76,16 @@ See what AI coding tools leave on your Mac: disk per tool, background processes,
 - **Processes without extra access.** It lists processes through `sysctl` (`KERN_PROC_ALL`, `KERN_PROCARGS2`), which the sandbox allows, walks parent chains to say what keeps each one alive, and keeps only names from command lines, never arguments or environment variables.
 - **Update receipts.** A pure `FootprintCore` target compares each check with the last one and turns version, folder size and login item changes into receipts, measuring folders with `lstat` so symbolic links can't lead it outside what it may read. 186 Swift Testing tests.
 
+### More Mac apps
+
+- <img src="https://github.com/stanczykwyatt/memo-export/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Memo Export](https://github.com/stanczykwyatt/memo-export)**: your Voice Memos transcripts, as Markdown with the audio. Timestamped paragraphs, only new memos each run, Obsidian-friendly. Read-only and sandboxed. [Website](https://stanczykwyatt.github.io/memo-export/)
+- <img src="https://github.com/stanczykwyatt/podcast-export/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Podcast Export](https://github.com/stanczykwyatt/podcast-export)**: your Apple Podcasts shows as OPML, and your listening history as notes, CSV and JSON. Read-only and sandboxed. [Website](https://stanczykwyatt.github.io/podcast-export/)
+- <img src="https://github.com/stanczykwyatt/reading-list-export/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Reading List Export](https://github.com/stanczykwyatt/reading-list-export)**: your Safari Reading List as Markdown, bookmarks and CSV, read status included, for Wallabag, Linkding, Readwise Reader or your notes. Read-only and sandboxed. [Website](https://stanczykwyatt.github.io/reading-list-export/)
+- <img src="https://github.com/stanczykwyatt/unblock-eject/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Unblock Eject](https://github.com/stanczykwyatt/unblock-eject)**: see what's keeping your disk from ejecting. Every app and process with files open on the disk, a polite Quit for each, then Eject. Found through `libproc`, ejected through Disk Arbitration; never force-quits. [Website](https://stanczykwyatt.github.io/unblock-eject/)
+- <img src="https://github.com/stanczykwyatt/next-departures/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Next Departures](https://github.com/stanczykwyatt/next-departures)**: your stop's next bus and train, live, in the menu bar. Delays, cancellations and alerts from any GTFS-realtime feed, with its own protobuf decoder; ready for Metro Transit and UMN campus buses. [Website](https://stanczykwyatt.github.io/next-departures/)
+- <img src="https://github.com/stanczykwyatt/right-folder/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Right Folder](https://github.com/stanczykwyatt/right-folder)**: Open and Save dialogs, in the right folder. The folders open in Finder, recent folders and favorites beside every dialog, one click or ⌃⌥J away. A free Default Folder X alternative that uses only Accessibility. [Website](https://stanczykwyatt.github.io/right-folder/)
+- <img src="https://github.com/stanczykwyatt/tonecap/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[Tonecap](https://github.com/stanczykwyatt/tonecap)**: design your keyboard's sound. Mechanical keyboard sounds made from numbers, no recordings: a [Web Audio playground](https://stanczykwyatt.github.io/tonecap/) with shareable links and WAV export, and a menu bar app that plays your sound as you type.
+
 ## Tools for coding agents
 
 Free, open-source command line tools for Codex, Claude Code, Gemini CLI and other terminal agents. Both make no network calls and have zero dependencies.
@@ -100,6 +110,14 @@ Go-to-definition and find-references for coding agents: an MCP server and CLI th
 - **Its own LSP client.** It picks a server per file (clangd, pyright, gopls, rust-analyzer and more), runs several at once, and takes symbols by name instead of column.
 - **Measured, not guessed.** On a made-up C project a function's uses came back as 10 exact lines against 59 to 77 from grep, and CI reruns the measurement.
 
+## Science tools
+
+Free tools for neuroscience data, made for labs that share NWB, HDF5, MATLAB and NumPy files.
+
+- <img src="https://github.com/stanczykwyatt/brainhound/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[brainhound](https://github.com/stanczykwyatt/brainhound)**: search and read public neuroscience data from your coding agent. One search across DANDI, OpenNeuro and NeuroMorpho, NWB files read remotely a slice at a time through its own read-only HDF5 reader, and a license and citation with every dataset. MCP server, CLI and skills. [Website](https://stanczykwyatt.github.io/brainhound/)
+- <img src="https://github.com/stanczykwyatt/dropslice/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[dropslice](https://stanczykwyatt.github.io/dropslice/)**: open NWB, HDF5, MATLAB, NumPy and Zarr files in your browser, with plots, images and tables. Nothing is uploaded. Built on h5web. [Source](https://github.com/stanczykwyatt/dropslice)
+- <img src="https://github.com/stanczykwyatt/scilook/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[SciLook](https://github.com/stanczykwyatt/scilook)**: Quick Look for scientific data on your Mac. Press Space on NWB, HDF5, MATLAB or NumPy files to see their structure and a plot. Sandboxed, no permissions, no internet access. [Website](https://stanczykwyatt.github.io/scilook/)
+
 ## Website
 
 ### [wyattstanczyk.com](https://wyattstanczyk.com)
@@ -116,10 +134,11 @@ My personal site: Next.js 16 and React 19 with no other runtime dependencies, de
 <img src="profile/toolbox.svg" height="40" alt="Swift, TypeScript, C#, Bash, Next.js, React, Tailwind CSS, Vercel, Supabase, PostgreSQL, SQLite, GitHub Actions, Git">
 
 <table>
-  <tr><td><b>Languages</b></td><td>Swift · TypeScript · C# · GLSL · SQL · Bash</td></tr>
+  <tr><td><b>Languages</b></td><td>Swift · TypeScript · JavaScript · C# · GLSL · SQL · Bash</td></tr>
   <tr><td><b>Apple</b></td><td>SwiftUI · AppKit · Carbon · Security · LocalAuthentication · CryptoKit · App Sandbox · Swift Package Manager</td></tr>
   <tr><td><b>Web</b></td><td>Next.js · React · Tailwind CSS · WebGL2 · Node.js</td></tr>
-  <tr><td><b>Agents</b></td><td>MCP · Language Server Protocol · agent hooks</td></tr>
+  <tr><td><b>Agents</b></td><td>MCP · Language Server Protocol · agent hooks · Agent Skills</td></tr>
+  <tr><td><b>Science data</b></td><td>NWB · HDF5 · MATLAB MAT-files · NumPy · Zarr · h5web · JavaScriptCore</td></tr>
   <tr><td><b>Data and infra</b></td><td>Supabase (Postgres) · SQLite · Vercel · GitHub Actions · GitHub Pages</td></tr>
 </table>
 
