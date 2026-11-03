@@ -1,8 +1,35 @@
 # Wyatt Stanczyk
 
-I build native macOS apps in Swift, command line tools for coding agents, and web apps in TypeScript, and I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API and raw WebGL2 with hand-written shaders.
+Neuroscience student at the University of Minnesota and co-founder of Hitogai. I build free, open-source software that does one job well and stays out of your way: native Mac apps in Swift, command line tools and MCP servers for coding agents, and tools for neuroscience data.
 
-[wyattstanczyk.com](https://wyattstanczyk.com) · [Copy 2FA](https://stanczykwyatt.github.io/copy-2fa/) · [Show Desktop](https://stanczykwyatt.github.io/show-desktop/) · [Who Stole My Focus](https://stanczykwyatt.github.io/who-stole-my-focus/) · [AI Footprint](https://stanczykwyatt.github.io/ai-footprint/) · [mulligan](https://stanczykwyatt.github.io/mulligan/) · [symbolhop](https://stanczykwyatt.github.io/symbolhop/)
+I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keychain, SQLite's C API, `libproc`, Disk Arbitration, the Language Server Protocol, raw HDF5 and WebGL2 with hand-written shaders.
+
+[wyattstanczyk.com](https://wyattstanczyk.com) · [Public roadmap](https://github.com/users/stanczykwyatt/projects/1) · [LinkedIn](https://www.linkedin.com/in/wyattstanczyk)
+
+## At a glance
+
+18 free projects, all MIT licensed, with zero or near-zero dependencies and no tracking.
+
+| | Project | What it does | Runs on |
+|---|---|---|---|
+| <img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/icon.png" width="24" alt=""> | [Copy 2FA](https://github.com/stanczykwyatt/copy-2fa) | Copies the newest 2FA code with one shortcut | macOS, Windows |
+| <img src="https://github.com/stanczykwyatt/show-desktop/raw/main/docs/icon.png" width="24" alt=""> | [Show Desktop](https://github.com/stanczykwyatt/show-desktop) | Hides every window and brings them back exactly | macOS |
+| <img src="https://github.com/stanczykwyatt/who-stole-my-focus/raw/main/docs/icon.png" width="24" alt=""> | [Who Stole My Focus](https://github.com/stanczykwyatt/who-stole-my-focus) | Names the app that jumps in front while you type | macOS, [Windows](https://github.com/stanczykwyatt/who-stole-my-focus-windows) |
+| <img src="https://github.com/stanczykwyatt/ai-footprint/raw/main/docs/icon.png" width="24" alt=""> | [AI Footprint](https://github.com/stanczykwyatt/ai-footprint) | Shows what AI coding tools leave on your Mac | macOS |
+| <img src="https://github.com/stanczykwyatt/memo-export/raw/main/docs/icon.png" width="24" alt=""> | [Memo Export](https://github.com/stanczykwyatt/memo-export) | Voice Memos transcripts as Markdown | macOS |
+| <img src="https://github.com/stanczykwyatt/podcast-export/raw/main/docs/icon.png" width="24" alt=""> | [Podcast Export](https://github.com/stanczykwyatt/podcast-export) | Apple Podcasts shows and history, exported | macOS |
+| <img src="https://github.com/stanczykwyatt/reading-list-export/raw/main/docs/icon.png" width="24" alt=""> | [Reading List Export](https://github.com/stanczykwyatt/reading-list-export) | Safari Reading List as Markdown, bookmarks and CSV | macOS |
+| <img src="https://github.com/stanczykwyatt/unblock-eject/raw/main/docs/icon.png" width="24" alt=""> | [Unblock Eject](https://github.com/stanczykwyatt/unblock-eject) | Shows what's keeping a disk from ejecting | macOS |
+| <img src="https://github.com/stanczykwyatt/next-departures/raw/main/docs/icon.png" width="24" alt=""> | [Next Departures](https://github.com/stanczykwyatt/next-departures) | Live bus and train times in the menu bar | macOS |
+| <img src="https://github.com/stanczykwyatt/right-folder/raw/main/docs/icon.png" width="24" alt=""> | [Right Folder](https://github.com/stanczykwyatt/right-folder) | Open and Save dialogs, in the right folder | macOS |
+| <img src="https://github.com/stanczykwyatt/tonecap/raw/main/docs/icon.png" width="24" alt=""> | [Tonecap](https://github.com/stanczykwyatt/tonecap) | Design your keyboard's sound, no recordings | macOS, web |
+| <img src="https://github.com/stanczykwyatt/scilook/raw/main/docs/icon.png" width="24" alt=""> | [SciLook](https://github.com/stanczykwyatt/scilook) | Quick Look for NWB, HDF5, MATLAB and NumPy files | macOS |
+| <img src="https://github.com/stanczykwyatt/mulligan/raw/main/docs/icon.png" width="24" alt=""> | [mulligan](https://github.com/stanczykwyatt/mulligan) | Undo for coding agents, shell commands included | macOS, Linux |
+| <img src="https://github.com/stanczykwyatt/symbolhop/raw/main/docs/icon.png" width="24" alt=""> | [symbolhop](https://github.com/stanczykwyatt/symbolhop) | Go-to-definition and references for coding agents | Node 20+ |
+| <img src="https://github.com/stanczykwyatt/brainhound/raw/main/docs/icon.png" width="24" alt=""> | [brainhound](https://github.com/stanczykwyatt/brainhound) | Search and read public neuroscience data from your agent | Node |
+| <img src="https://github.com/stanczykwyatt/dropslice/raw/main/docs/icon.png" width="24" alt=""> | [dropslice](https://github.com/stanczykwyatt/dropslice) | Open NWB, HDF5, MATLAB, NumPy and Zarr files in the browser | web |
+| 🌸 | [Openfume](https://stanczykwyatt.github.io/openfume/) | An open fragrance database: search, a quiz and recommendations that explain themselves | web |
+| 🌐 | [wyattstanczyk.com](https://wyattstanczyk.com) | My site: raw WebGL2 with hand-written shaders | web |
 
 ## Free Mac utilities
 
@@ -118,7 +145,11 @@ Free tools for neuroscience data, made for labs that share NWB, HDF5, MATLAB and
 - <img src="https://github.com/stanczykwyatt/dropslice/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[dropslice](https://stanczykwyatt.github.io/dropslice/)**: open NWB, HDF5, MATLAB, NumPy and Zarr files in your browser, with plots, images and tables. Nothing is uploaded. Built on h5web. [Source](https://github.com/stanczykwyatt/dropslice)
 - <img src="https://github.com/stanczykwyatt/scilook/raw/main/docs/icon.png" width="20" height="20" align="top" alt=""> **[SciLook](https://github.com/stanczykwyatt/scilook)**: Quick Look for scientific data on your Mac. Press Space on NWB, HDF5, MATLAB or NumPy files to see their structure and a plot. Sandboxed, no permissions, no internet access. [Website](https://stanczykwyatt.github.io/scilook/)
 
-## Website
+## Web
+
+### [Openfume](https://stanczykwyatt.github.io/openfume/)
+
+An open fragrance database, built only from brands' own published notes and open data like Wikidata and Open Beauty Facts, never copied from other fragrance sites. Search, a quiz where you pick how many questions to answer, a "find one right now" picker, a shelf for your collection, layering ideas and recommendations that explain why. A static site with an installable phone version, and your shelf stays on your device.
 
 ### [wyattstanczyk.com](https://wyattstanczyk.com)
 
