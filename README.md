@@ -8,10 +8,11 @@ I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keych
 
 ## At a glance
 
-18 free projects, all MIT licensed, with zero or near-zero dependencies and no tracking.
+19 free projects, all MIT licensed, with zero or near-zero dependencies and no tracking.
 
 | | Project | What it does | Runs on |
 |---|---|---|---|
+| <img src="https://github.com/stanczykwyatt/latchlayout/raw/main/assets/latchlayout.png" width="24" alt=""> | [LatchLayout](https://github.com/stanczykwyatt/latchlayout) | Hold a key to open apps, browser profiles and URLs in saved display layouts | Windows 11 x64 preview |
 | <img src="https://github.com/stanczykwyatt/copy-2fa/raw/main/docs/icon.png" width="24" alt=""> | [Copy 2FA](https://github.com/stanczykwyatt/copy-2fa) | Copies the newest 2FA code with one shortcut | macOS, Windows |
 | <img src="https://github.com/stanczykwyatt/show-desktop/raw/main/docs/icon.png" width="24" alt=""> | [Show Desktop](https://github.com/stanczykwyatt/show-desktop) | Hides every window and brings them back exactly | macOS |
 | <img src="https://github.com/stanczykwyatt/who-stole-my-focus/raw/main/docs/icon.png" width="24" alt=""> | [Who Stole My Focus](https://github.com/stanczykwyatt/who-stole-my-focus) | Names the app that jumps in front while you type | macOS, [Windows](https://github.com/stanczykwyatt/who-stole-my-focus-windows) |
@@ -30,6 +31,18 @@ I like working close to the platform: Carbon hotkeys, the App Sandbox, the Keych
 | <img src="https://github.com/stanczykwyatt/dropslice/raw/main/docs/icon.png" width="24" alt=""> | [dropslice](https://github.com/stanczykwyatt/dropslice) | Open NWB, HDF5, MATLAB, NumPy and Zarr files in the browser | web |
 | 🌸 | [Openfume](https://stanczykwyatt.github.io/openfume/) | An open fragrance database: search, a quiz and recommendations that explain themselves | web |
 | 🌐 | [wyattstanczyk.com](https://wyattstanczyk.com) | My site: raw WebGL2 with hand-written shaders | web |
+
+## Windows workspace launcher
+
+### [LatchLayout](https://github.com/stanczykwyatt/latchlayout)
+
+Hold a keyboard key or mouse button to open a whole workspace: applications, browser profiles and URLs, on the displays and window layouts you choose. The visual editor uses a blue Aero-inspired theme, lives in the tray while listening, and quits completely when you ask it to. C#/.NET 10, MIT licensed, with a self-contained Windows 11 x64 preview.
+
+<img src="https://github.com/stanczykwyatt/latchlayout/raw/main/docs/dashboard.png" width="560" alt="LatchLayout's blue Aero workspace editor with hold shortcuts and window layouts">
+
+[Download v0.2.0](https://github.com/stanczykwyatt/latchlayout/releases/tag/v0.2.0) · [Source and setup](https://github.com/stanczykwyatt/latchlayout) · [Verification and limits](https://github.com/stanczykwyatt/latchlayout/blob/main/docs/VERIFICATION.md)
+
+30 local checks include actual window restoration on two displays and Chrome tests in an isolated temporary profile. No key logging, telemetry, administrator requirement, startup task, or application-owned network client. An unsigned early preview; physical input delivery and mixed-DPI hardware remain unverified.
 
 ## Free Mac utilities
 
